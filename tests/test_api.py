@@ -29,8 +29,8 @@ def test_predict_endpoint(monkeypatch, tmp_path):
 
     from api.main import app
 
-    client = TestClient(app)
-    response = client.post("/predict", json={"news": "Official report from agency"})
+    with TestClient(app) as client:
+        response = client.post("/predict", json={"news": "Official report from agency"})
 
     assert response.status_code == 200
     body = response.json()
@@ -44,8 +44,8 @@ def test_health_endpoint(monkeypatch, tmp_path):
 
     from api.main import app
 
-    client = TestClient(app)
-    response = client.get("/health")
+    with TestClient(app) as client:
+        response = client.get("/health")
 
     assert response.status_code == 200
     assert response.json()["status"] == "ok"
