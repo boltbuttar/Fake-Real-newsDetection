@@ -86,6 +86,10 @@ By default, training logs metrics and artifacts to ./mlruns.
 
 mlflow ui --backend-store-uri mlruns
 
+Run multiple experiments for MLflow comparison:
+
+python -m src.run_experiments --data data/news.csv
+
 ## Docker
 
 Build an image after training so models/ is included in the image:
