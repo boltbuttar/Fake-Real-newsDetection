@@ -105,4 +105,4 @@ See .github/workflows/ci-cd.yml.
 
 ## Deployment
 
-Railway or Render can run the Docker image or a Python service. Ensure models/ is present in the image or mounted, and set MODEL_DIR if needed.
+https://fake-real-newsdetection-production.up.railway.app/
